@@ -22,54 +22,20 @@ public class Menu{
                 menuConsultar();
                 switch (sc.nextInt()) {
                     case 1:
-                        System.out.println(Colors.BLUE + "-----------------------------------" + Colors.RESET);
-                        System.out.println(Colors.GREEN + "Tipo Planta:"+ Colors.RESET);
-                        for(Pokemon p : pokemons){
-                            if(p instanceof Planta){
-                               imprimirDatos(p);
-                            }
-                        }
-                        System.out.println(Colors.BLUE + "-----------------------------------" + Colors.RESET);
+                        //tipoPlanta(pokemons);
+                        imprimirTipo(pokemons, Planta.class);
                         break;
                     case 2:
-                        System.out.println(Colors.BLUE + "-----------------------------------" + Colors.RESET);
-                        System.out.println(Colors.GREEN + "Tipo fuego: " + Colors.RESET);
-                        for(Pokemon p : pokemons){
-                            if(p instanceof Fuego){
-                                imprimirDatos(p);
-                            }
-                        }
-                        System.out.println(Colors.BLUE + "-----------------------------------" + Colors.RESET);
+                        imprimirTipo(pokemons, Fuego.class);
                         break;
                     case 3:
-                        System.out.println(Colors.BLUE + "-----------------------------------" + Colors.RESET); 
-                        System.out.println(Colors.GREEN + "Tipo Agua: " + Colors.RESET);
-                        for(Pokemon p : pokemons){
-                            if(p instanceof Agua){
-                                imprimirDatos(p);
-                            }
-                        }
-                        System.out.println(Colors.BLUE + "-----------------------------------" + Colors.RESET);
+                        imprimirTipo(pokemons, Agua.class);
                         break;
                     case 4:
-                        System.out.println(Colors.BLUE + "-----------------------------------" + Colors.RESET);
-                        System.out.println(Colors.GREEN + "Tipo Ellectrico: " + Colors.RESET);
-                        for(Pokemon p : pokemons){
-                            if(p instanceof Electrico){
-                                imprimirDatos(p);
-                            }
-                        }
-                        System.out.println(Colors.BLUE + "-----------------------------------" + Colors.RESET);
+                        imprimirTipo(pokemons, Electrico.class);
                         break;
                     case 5:
-                    System.out.println(Colors.BLUE + "-----------------------------------" + Colors.RESET);
-                    System.out.println(Colors.GREEN + "Tipo Normal: " + Colors.RESET);
-                    for(Pokemon p : pokemons){
-                        if(p instanceof Normal){
-                            imprimirDatos(p);
-                        }    
-                    }
-                    System.out.println(Colors.BLUE + "-----------------------------------" + Colors.RESET);
+                        imprimirTipo(pokemons, Normal.class);
                         break;
                     case 6:
                     System.out.println(Colors.RED + "Regresar" + Colors.RESET);
@@ -91,13 +57,35 @@ public class Menu{
     }
 
     public static void menuConsultar(){
-        System.out.println(Colors.GREEN + "¿Qué tipo desea consultar?" + Colors.RESET);
+        System.out.println(Colors.GREEN + "¿Que tipo desea consultar?" + Colors.RESET);
         System.out.println(Colors.CYAN  + "1. Planta"   + Colors.RESET);
-        System.out.println(Colors.CYAN   + "2. Fire"     + Colors.RESET);
+        System.out.println(Colors.CYAN   + "2. Fuego"     + Colors.RESET);
         System.out.println(Colors.CYAN  + "3. Agua"     + Colors.RESET);
-        System.out.println(Colors.CYAN+ "4. Eléctrico" + Colors.RESET);
+        System.out.println(Colors.CYAN+ "4. Electrico" + Colors.RESET);
         System.out.println(Colors.CYAN+ "5. Normal"   + Colors.RESET);
         System.out.println(Colors.RED + "6. Regresar" + Colors.RESET);
+    }
+
+        //ASI LO HACIA PRIMERO CON CADA TIPO
+    // public static void tipoNormal(ArrayList<Pokemon> pokemons){
+    //     System.out.println(Colors.BLUE + "-----------------------------------" + Colors.RESET);
+    //     System.out.println(Colors.GREEN + "Tipo Normal: " + Colors.RESET);
+    //     for(Pokemon p : pokemons){
+    //         if(p instanceof Normal){
+    //             imprimirDatos(p);
+    //         }    
+    //     }
+    //     System.out.println(Colors.BLUE + "-----------------------------------" + Colors.RESET);        
+    // }
+    public static void imprimirTipo(ArrayList<Pokemon> pokemons, Class<?> tipo){
+        System.out.println(Colors.BLUE + "-----------------------------------" + Colors.RESET);
+        System.out.println(Colors.GREEN + "Tipo " + tipo.getSimpleName() + Colors.RESET);
+        for(Pokemon p : pokemons){
+            if(tipo.isInstance(p)){
+                imprimirDatos(p);
+            }    
+        }
+        System.out.println(Colors.BLUE + "-----------------------------------" + Colors.RESET); 
     }
 
     public static void imprimirDatos(Pokemon p){
@@ -105,4 +93,5 @@ public class Menu{
         System.out.println(Colors.PURPLE + "Nombre: " + Colors.BLUE + p.getNombre() + Colors.PURPLE + " #" + p.getNum() + Colors.RESET);
         System.out.println(Colors.PURPLE +"Descripcion: " + Colors.BLUE + p.getDescripcion());
     }
+
 }
