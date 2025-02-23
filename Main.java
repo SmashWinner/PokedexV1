@@ -1,8 +1,15 @@
 
+/*      
+██████╗░░█████╗░██╗░░██╗███████╗██████╗░███████╗██╗░░██╗
+██╔══██╗██╔══██╗██║░██╔╝██╔════╝██╔══██╗██╔════╝╚██╗██╔╝
+██████╔╝██║░░██║█████═╝░█████╗░░██║░░██║█████╗░░░╚███╔╝░
+██╔═══╝░██║░░██║██╔═██╗░██╔══╝░░██║░░██║██╔══╝░░░██╔██╗░
+██║░░░░░╚█████╔╝██║░╚██╗███████╗██████╔╝███████╗██╔╝╚██╗By Smash
+╚═╝░░░░░░╚════╝░╚═╝░░╚═╝╚══════╝╚═════╝░╚══════╝╚═╝░░╚═╝
+ */
 import Class.Pokemons.*;
 import Class.*;
 import Menu.*;
-
 public class Main{
 
     public static void main(String[] args){
@@ -12,7 +19,7 @@ public class Main{
         //Empezammos el menu
         Menu.menu();
     }
-
+    
 
     public static void cargarPokemons(){
         Pokemon.setPokemon(new Bulbasaur());
