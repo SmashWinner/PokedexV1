@@ -1,37 +1,125 @@
+# 🌟 Pokedex Project
 
-# Pokedex
+![Pokemon Banner](https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/25.png)
 
-Este proyecto es una implementación de una Pokedex en Java. Permite consultar información sobre diferentes tipos de Pokémon y sus características.
+Una implementación moderna de una Pokedex en Java que permite a los entrenadores explorar y descubrir información detallada sobre diferentes especies de Pokémon.
 
-## Características
+## ✨ Características Principales
 
-- Consultar Pokémon por tipo: Planta, Fuego, Agua, Eléctrico, Normal.
-- Mostrar detalles de cada Pokémon, incluyendo nombre, número y descripción.
-- Interfaz de usuario en consola con colores para una mejor visualización.
+### 🎮 Funcionalidades
+- **Búsqueda por Tipo**: Explora Pokémon filtrados por sus elementos:
+  - 🌿 Planta
+  - 🔥 Fuego
+  - 💧 Agua
+  - ⚡ Eléctrico
+  - ⭐ Normal
 
-## Estructura del Proyecto
+### 📱 Interfaz
+- Interfaz de consola intuitiva con sistema de colores
+- Navegación fluida entre diferentes categorías
+- Visualización detallada de estadísticas Pokémon
 
-- `Main.java`: Punto de entrada del programa. Carga los Pokémon y muestra el menú principal.
-- `Menu.java`: Contiene la lógica del menú para consultar los Pokémon.
-- `Pokemon.java`: Clase abstracta que define las propiedades y métodos comunes de todos los Pokémon.
-- `Colors.java`: Utilidad para manejar colores en la consola.
-- `Pokemons`: Paquete que contiene las clases específicas de cada tipo de Pokémon.
+### 📊 Información Disponible
+- Nombre y número de Pokédex
+- Descripción detallada
+- Estadísticas base
+- Habilidades especiales
 
-## Cómo Ejecutar
+## 🚀 Estructura del Proyecto
 
-1. Clona el repositorio o descarga los archivos del proyecto.
-2. Abre el proyecto en tu IDE de preferencia.
-3. Asegúrate de tener configurado el JDK.
-4. Ejecuta la clase `Main.java`.
+```
+src/
+├── Main.java           # Punto de entrada del programa
+├── Menu/
+│   └── Menu.java       # Sistema de navegación
+├── Class/
+│   ├── Pokemon.java    # Clase base abstracta
+│   └── Pokemons/       # Implementaciones específicas
+├── Interfaces/
+│   └──                 # Interfaces
+└── Utils/
+    └── Colors.java     # Utilidad de colores
+```
 
-## Ejemplo de Uso
+## 💻 Requisitos Previos
 
-Al ejecutar el programa, se mostrará un menú en la consola donde podrás elegir entre consultar Pokémon por tipo o salir del programa. Al seleccionar un tipo, se mostrarán los detalles de todos los Pokémon de ese tipo.
+- Java JDK 11 o superior
+- IDE compatible con Java (recomendado: IntelliJ IDEA o Eclipse)
+- Git (opcional, para clonar el repositorio)
 
-## Contribuciones
+## 🔧 Instalación
 
-Las contribuciones son bienvenidas. Si deseas mejorar el proyecto, por favor abre un issue o envía un pull request.
+1. **Clonar el Repositorio**
+   ```bash
+   git clone https://github.com/tuusuario/pokedex-java.git
+   cd pokedex-java
+   ```
 
-## Licencia
+2. **Compilar el Proyecto**
+   ```bash
+   javac src/Main.java
+   ```
 
-Este proyecto está bajo la Licencia MIT. Consulta el archivo `LICENSE` para más detalles.
+3. **Ejecutar la Aplicación**
+   ```bash
+   java src.Main
+   ```
+
+## 📖 Ejemplo de Uso
+
+1. Ejecuta el programa
+2. Selecciona un tipo de Pokémon del menú principal
+3. Explora la lista de Pokémon disponibles
+4. Selecciona un Pokémon específico para ver sus detalles
+
+```bash
+=== POKEDEX ===
+1. Pokémon Tipo Fuego 🔥
+2. Pokémon Tipo Agua 💧
+3. Pokémon Tipo Planta 🌿
+4. Pokémon Tipo Eléctrico ⚡
+5. Pokémon Tipo Normal ⭐
+0. Salir
+```
+
+## 🤝 Contribuciones
+
+¡Las contribuciones son bienvenidas! Si deseas mejorar este proyecto:
+
+1. Haz un Fork del proyecto
+2. Crea una nueva rama (`git checkout -b feature/AmazingFeature`)
+3. Realiza tus cambios
+4. Commit tus cambios (`git commit -m 'Add: Amazing Feature'`)
+5. Push a la rama (`git push origin feature/AmazingFeature`)
+6. Abre un Pull Request
+
+## 📄 Licencia
+
+Este proyecto está bajo la Licencia MIT - consulta el archivo [LICENSE](LICENSE) para más detalles.
+
+## 🌟 Pokémon Destacados
+
+### Tipo Fuego
+![Charizard](https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/6.png)
+
+### Tipo Agua
+![Blastoise](https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/9.png)
+
+### Tipo Planta
+![Venusaur](https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/3.png)
+
+### Tipo Eléctrico
+![Raichu](https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/26.png)
+
+### Tipo Normal
+![Snorlax](https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/143.png)
+
+## 📞 Contacto
+
+Si tienes preguntas o sugerencias, no dudes en:
+- Abrir un Issue
+- Enviar un Pull Request
+- Contactarme por correo: [tu@email.com]
+
+---
+⭐ ¡No olvides dar una estrella al proyecto si te ha sido útil! ⭐
