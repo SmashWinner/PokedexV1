@@ -19,22 +19,14 @@ public class Menu{
 
                 boolean condition = true;
                 do{
-                System.out.println(Colors.GREEN + "¿Qué tipo desea consultar?" + Colors.RESET);
-                System.out.println(Colors.CYAN  + "1. Planta"   + Colors.RESET);
-                System.out.println(Colors.CYAN   + "2. Fire"     + Colors.RESET);
-                System.out.println(Colors.CYAN  + "3. Agua"     + Colors.RESET);
-                System.out.println(Colors.CYAN+ "4. Eléctrico" + Colors.RESET);
-                System.out.println(Colors.CYAN+ "5. Normal"   + Colors.RESET);
-                System.out.println(Colors.RED + "6. Regresar" + Colors.RESET);
+                menuConsultar();
                 switch (sc.nextInt()) {
                     case 1:
                         System.out.println(Colors.BLUE + "-----------------------------------" + Colors.RESET);
                         System.out.println(Colors.GREEN + "Tipo Planta:"+ Colors.RESET);
                         for(Pokemon p : pokemons){
                             if(p instanceof Planta){
-                                System.out.println(Colors.BLUE + "-----------------------------------" + Colors.RESET);
-                                System.out.println(Colors.PURPLE + "Nombre: " + Colors.BLUE + p.getNombre() + Colors.PURPLE + " #" + p.getNum() + Colors.RESET);
-                                System.out.println(Colors.PURPLE +"Descripcion: " + Colors.BLUE + p.getDescripcion());
+                               imprimirDatos(p);
                             }
                         }
                         System.out.println(Colors.BLUE + "-----------------------------------" + Colors.RESET);
@@ -44,9 +36,7 @@ public class Menu{
                         System.out.println(Colors.GREEN + "Tipo fuego: " + Colors.RESET);
                         for(Pokemon p : pokemons){
                             if(p instanceof Fuego){
-                                System.out.println(Colors.BLUE + "-----------------------------------" + Colors.RESET);
-                                System.out.println(Colors.PURPLE + "Nombre: " + Colors.BLUE + p.getNombre() + Colors.PURPLE + " #" + p.getNum() + Colors.RESET);
-                                System.out.println(Colors.PURPLE +"Descripcion: " + Colors.BLUE + p.getDescripcion());
+                                imprimirDatos(p);
                             }
                         }
                         System.out.println(Colors.BLUE + "-----------------------------------" + Colors.RESET);
@@ -56,9 +46,7 @@ public class Menu{
                         System.out.println(Colors.GREEN + "Tipo Agua: " + Colors.RESET);
                         for(Pokemon p : pokemons){
                             if(p instanceof Agua){
-                                System.out.println(Colors.BLUE + "-----------------------------------" + Colors.RESET);
-                                System.out.println(Colors.PURPLE + "Nombre: " + Colors.BLUE + p.getNombre() + Colors.PURPLE + " #" + p.getNum() + Colors.RESET);
-                                System.out.println(Colors.PURPLE +"Descripcion: " + Colors.BLUE + p.getDescripcion());
+                                imprimirDatos(p);
                             }
                         }
                         System.out.println(Colors.BLUE + "-----------------------------------" + Colors.RESET);
@@ -68,9 +56,7 @@ public class Menu{
                         System.out.println(Colors.GREEN + "Tipo Ellectrico: " + Colors.RESET);
                         for(Pokemon p : pokemons){
                             if(p instanceof Electrico){
-                                System.out.println(Colors.BLUE + "-----------------------------------" + Colors.RESET);
-                                System.out.println(Colors.PURPLE + "Nombre: " + Colors.BLUE + p.getNombre() + Colors.PURPLE + " #" + p.getNum() + Colors.RESET);
-                                System.out.println(Colors.PURPLE +"Descripcion: " + Colors.BLUE + p.getDescripcion());
+                                imprimirDatos(p);
                             }
                         }
                         System.out.println(Colors.BLUE + "-----------------------------------" + Colors.RESET);
@@ -80,9 +66,7 @@ public class Menu{
                     System.out.println(Colors.GREEN + "Tipo Normal: " + Colors.RESET);
                     for(Pokemon p : pokemons){
                         if(p instanceof Normal){
-                            System.out.println(Colors.BLUE + "-----------------------------------" + Colors.RESET);
-                            System.out.println(Colors.PURPLE + "Nombre: " + Colors.BLUE + p.getNombre() + Colors.PURPLE + " #" + p.getNum() + Colors.RESET);
-                            System.out.println(Colors.PURPLE +"Descripcion: " + Colors.BLUE + p.getDescripcion());
+                            imprimirDatos(p);
                         }    
                     }
                     System.out.println(Colors.BLUE + "-----------------------------------" + Colors.RESET);
@@ -106,4 +90,19 @@ public class Menu{
         sc.close();
     }
 
+    public static void menuConsultar(){
+        System.out.println(Colors.GREEN + "¿Qué tipo desea consultar?" + Colors.RESET);
+        System.out.println(Colors.CYAN  + "1. Planta"   + Colors.RESET);
+        System.out.println(Colors.CYAN   + "2. Fire"     + Colors.RESET);
+        System.out.println(Colors.CYAN  + "3. Agua"     + Colors.RESET);
+        System.out.println(Colors.CYAN+ "4. Eléctrico" + Colors.RESET);
+        System.out.println(Colors.CYAN+ "5. Normal"   + Colors.RESET);
+        System.out.println(Colors.RED + "6. Regresar" + Colors.RESET);
+    }
+
+    public static void imprimirDatos(Pokemon p){
+        System.out.println(Colors.BLUE + "-----------------------------------" + Colors.RESET);
+        System.out.println(Colors.PURPLE + "Nombre: " + Colors.BLUE + p.getNombre() + Colors.PURPLE + " #" + p.getNum() + Colors.RESET);
+        System.out.println(Colors.PURPLE +"Descripcion: " + Colors.BLUE + p.getDescripcion());
+    }
 }
