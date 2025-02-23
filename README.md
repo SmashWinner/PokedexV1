@@ -119,7 +119,6 @@ Este proyecto está bajo la Licencia MIT - consulta el archivo [LICENSE](LICENSE
 Si tienes preguntas o sugerencias, no dudes en:
 - Abrir un Issue
 - Enviar un Pull Request
-- Contactarme por correo: [tu@email.com]
 
 ---
 ⭐ ¡No olvides dar una estrella al proyecto si te ha sido útil! ⭐
