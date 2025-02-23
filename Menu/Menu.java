@@ -2,10 +2,11 @@ package Menu;
 import Class.*;
 import Interfaces.*;
 import Utils.Colors;
+
 import java.util.ArrayList;
 import java.util.Scanner;
-public class Menu{
 
+public class Menu{
     public static void menu(){
         ArrayList<Pokemon> pokemons = Pokemon.getPokemons();
 
@@ -15,7 +16,7 @@ public class Menu{
 
         while(!input.equalsIgnoreCase("Salir")){ 
             limpiarTerminal(); //Limpiar terminal
-            textoPokedex();
+            System.out.println(Menu.texto);
             System.out.println(Colors.GREEN + "Que decea realizar? Consular o Salir"+ Colors.RESET);
             input = sc.nextLine();
             if(input.equalsIgnoreCase("consultar")){
@@ -41,7 +42,10 @@ public class Menu{
                     case 5:
                         imprimirTipo(pokemons, Normal.class);
                         break;
-                    case 6:
+                    case 6: 
+                        imprimirTodos(pokemons);
+                        break;
+                    case 7:
                     System.out.println(Colors.RED + "Regresar" + Colors.RESET);
                         condition = false;
                         break;
@@ -52,7 +56,7 @@ public class Menu{
                 sc.nextLine(); //limpiar buffer
                 }while(condition);
             }else{
-                System.out.println(Colors.RED + "Comando desconocido" + Colors.RESET);
+                System.out.println(Colors.RED + "Saliendo..." + Colors.RESET);
             }
 
         }
@@ -67,7 +71,18 @@ public class Menu{
         System.out.println(Colors.CYAN  + "3. Agua"     + Colors.RESET);
         System.out.println(Colors.CYAN+ "4. Electrico" + Colors.RESET);
         System.out.println(Colors.CYAN+ "5. Normal"   + Colors.RESET);
-        System.out.println(Colors.RED + "6. Regresar" + Colors.RESET);
+        System.out.println(Colors.CYAN+ "6. Todos"   + Colors.RESET);
+        System.out.println(Colors.RED + "7. Regresar" + Colors.RESET);
+    }
+
+    public static void imprimirTodos(ArrayList<Pokemon> pokemons){
+        limpiarTerminal(); //Limpiar terminal
+        System.out.println(Colors.BLUE + "-----------------------------------" + Colors.RESET);
+        System.out.println(Colors.GREEN + "Todos" + Colors.RESET);
+        for(Pokemon p : pokemons){
+            imprimirDatos(p);
+        }
+        System.out.println(Colors.BLUE + "-----------------------------------" + Colors.RESET); 
     }
     public static void imprimirTipo(ArrayList<Pokemon> pokemons, Class<?> tipo){
         limpiarTerminal(); //Limpiar terminal
@@ -105,12 +120,10 @@ public class Menu{
         }
     }
 
-    public static void textoPokedex(){
-        System.out.println("██████╗░░█████╗░██╗░░██╗███████╗██████╗░███████╗██╗░░██╗");
-        System.out.println("██╔══██╗██╔══██╗██║░██╔╝██╔════╝██╔══██╗██╔════╝╚██╗██╔╝");
-        System.out.println("██████╔╝██║░░██║█████═╝░█████╗░░██║░░██║█████╗░░░╚███╔╝░");
-        System.out.println("██╔═══╝░██║░░██║██╔═██╗░██╔══╝░░██║░░██║██╔══╝░░░██╔██╗░");
-        System.out.println("██║░░░░░╚█████╔╝██║░╚██╗███████╗██████╔╝███████╗██╔╝╚██╗");
-        System.out.println("╚═╝░░░░░░╚════╝░╚═╝░░╚═╝╚══════╝╚═════╝░╚══════╝╚═╝░░╚═╝By Smash");
-    }
+    public static String texto ="██████╗░░█████╗░██╗░░██╗███████╗██████╗░███████╗██╗░░██╗\r\n" + //
+                                "██╔══██╗██╔══██╗██║░██╔╝██╔════╝██╔══██╗██╔════╝╚██╗██╔╝\r\n" + //
+                                "██████╔╝██║░░██║█████═╝░█████╗░░██║░░██║█████╗░░░╚███╔╝░\r\n" + //
+                                "██╔═══╝░██║░░██║██╔═██╗░██╔══╝░░██║░░██║██╔══╝░░░██╔██╗░\r\n" + //
+                                "██║░░░░░╚█████╔╝██║░╚██╗███████╗██████╔╝███████╗██╔╝╚██╗\r\n" + //
+                                "╚═╝░░░░░░╚════╝░╚═╝░░╚═╝╚══════╝╚═════╝░╚══════╝╚═╝░░╚═╝By Smash";
 }
