@@ -2,8 +2,8 @@ package Menu;
 import Class.*;
 import Interfaces.*;
 import Utils.Colors;
-import java.util.Scanner;
 import java.util.ArrayList;
+import java.util.Scanner;
 public class Menu{
 
     public static void menu(){
@@ -12,13 +12,17 @@ public class Menu{
         String input = "";
         Scanner sc = new Scanner(System.in);
         //input = sc.next();
+
         while(!input.equalsIgnoreCase("Salir")){ 
+            limpiarTerminal(); //Limpiar terminal
+            textoPokedex();
             System.out.println(Colors.GREEN + "Que decea realizar? Consular o Salir"+ Colors.RESET);
             input = sc.nextLine();
             if(input.equalsIgnoreCase("consultar")){
 
                 boolean condition = true;
                 do{
+                //limpiarTerminal(); //Limpiar terminal
                 menuConsultar();
                 switch (sc.nextInt()) {
                     case 1:
@@ -65,19 +69,8 @@ public class Menu{
         System.out.println(Colors.CYAN+ "5. Normal"   + Colors.RESET);
         System.out.println(Colors.RED + "6. Regresar" + Colors.RESET);
     }
-
-        //ASI LO HACIA PRIMERO CON CADA TIPO
-    // public static void tipoNormal(ArrayList<Pokemon> pokemons){
-    //     System.out.println(Colors.BLUE + "-----------------------------------" + Colors.RESET);
-    //     System.out.println(Colors.GREEN + "Tipo Normal: " + Colors.RESET);
-    //     for(Pokemon p : pokemons){
-    //         if(p instanceof Normal){
-    //             imprimirDatos(p);
-    //         }    
-    //     }
-    //     System.out.println(Colors.BLUE + "-----------------------------------" + Colors.RESET);        
-    // }
     public static void imprimirTipo(ArrayList<Pokemon> pokemons, Class<?> tipo){
+        limpiarTerminal(); //Limpiar terminal
         System.out.println(Colors.BLUE + "-----------------------------------" + Colors.RESET);
         System.out.println(Colors.GREEN + "Tipo " + tipo.getSimpleName() + Colors.RESET);
         for(Pokemon p : pokemons){
@@ -86,6 +79,15 @@ public class Menu{
             }    
         }
         System.out.println(Colors.BLUE + "-----------------------------------" + Colors.RESET); 
+        //ASI LO HACIA PRIMERO CON CADA TIPO
+        //     System.out.println(Colors.BLUE + "-----------------------------------" + Colors.RESET);
+        //     System.out.println(Colors.GREEN + "Tipo Normal: " + Colors.RESET);
+        //     for(Pokemon p : pokemons){
+        //         if(p instanceof Normal){
+        //             imprimirDatos(p);
+        //         }    
+        //     }
+        //     System.out.println(Colors.BLUE + "-----------------------------------" + Colors.RESET);  
     }
 
     public static void imprimirDatos(Pokemon p){
@@ -94,4 +96,21 @@ public class Menu{
         System.out.println(Colors.PURPLE +"Descripcion: " + Colors.BLUE + p.getDescripcion());
     }
 
+
+    public static void limpiarTerminal() {
+        try {
+            new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor();
+        } catch (Exception e) {
+            System.out.println("No se pudo limpiar la pantalla.");
+        }
+    }
+
+    public static void textoPokedex(){
+        System.out.println("██████╗░░█████╗░██╗░░██╗███████╗██████╗░███████╗██╗░░██╗");
+        System.out.println("██╔══██╗██╔══██╗██║░██╔╝██╔════╝██╔══██╗██╔════╝╚██╗██╔╝");
+        System.out.println("██████╔╝██║░░██║█████═╝░█████╗░░██║░░██║█████╗░░░╚███╔╝░");
+        System.out.println("██╔═══╝░██║░░██║██╔═██╗░██╔══╝░░██║░░██║██╔══╝░░░██╔██╗░");
+        System.out.println("██║░░░░░╚█████╔╝██║░╚██╗███████╗██████╔╝███████╗██╔╝╚██╗");
+        System.out.println("╚═╝░░░░░░╚════╝░╚═╝░░╚═╝╚══════╝╚═════╝░╚══════╝╚═╝░░╚═╝By Smash");
+    }
 }
