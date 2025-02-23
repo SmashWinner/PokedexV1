@@ -2,7 +2,7 @@
 
 ![Pokemon Banner](https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/25.png)
 
-Una implementación moderna de una Pokedex en Java que permite a los entrenadores explorar y descubrir información detallada sobre diferentes especies de Pokémon.
+Una implementación moderna de una Pokedex en Java que permite a los entrenadores explorar y descubrir información detallada sobre diferentes especies de Pokémon, por ahora solo primeros 51 pokemones de la primera generacion.
 
 ## ✨ Características Principales
 
