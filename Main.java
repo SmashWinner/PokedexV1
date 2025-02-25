@@ -15,5 +15,11 @@ public class Main{
         Sistema.cargarPokemons();
         //Empezammos el menu
         Menu.menu();
+
+        /**
+         * asdasdasd
+         * asdasdasdasdadas
+         * 
+        **/      
     }
 }
