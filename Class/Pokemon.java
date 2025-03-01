@@ -32,6 +32,7 @@ public abstract class Pokemon {
     //Setters
     public void setNombre(String nombre){this.nombre = nombre;}
     public void setDescripcion(String descripcion){this.descripcion = descripcion;}
+
     public static void setPokemon(Pokemon pokemon){
         pokemons.add(pokemon);
     }
